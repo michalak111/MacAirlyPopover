@@ -13,13 +13,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var contentView = ContentView()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        print(#function)
-        
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem?.button?.image = NSImage(named: "logo")
         statusItem?.button?.target = self
         statusItem?.button?.action = #selector(togglePopover)
-    
 
         // Monitor mouse down
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] event in

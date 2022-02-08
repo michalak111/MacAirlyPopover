@@ -1,8 +1,6 @@
 //
-//  WhatsNextApp.swift
+//  AirlyPopoverApp.swift
 //  AirlyPopover
-//
-//  Created by Jan Michalak on 06/02/2022.
 //
 
 import SwiftUI
