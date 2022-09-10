@@ -29,9 +29,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func showPopover() {
         guard let statusBarButton = statusItem?.button else { return }
-        
-        popover.contentViewController = NSHostingController(rootView: contentView)
-        popover.contentSize = NSSize(width: 300, height: 148)
+//        popover.contentViewController = NSHostingController(rootView: contentView)
+        popover.contentViewController = NSHostingController(rootView: ContentView())
+        popover.contentSize = NSSize(width: 300, height: 175)
         
         popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: .maxY)
     }

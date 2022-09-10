@@ -8,8 +8,13 @@
 import EventKit
 import SwiftUI
 
-struct ContentView: View {   
+struct ContentView: View {
+    @State private var airlyId: String = UserDefaults.standard.string(forKey: "airlyId") ?? ""
+    
     var body: some View {
-        Informations()
+        TextField("Airly Id", text: $airlyId).onChange(of: airlyId, perform: { newValue in
+            UserDefaults.standard.set(newValue, forKey: "airlyId")
+        })
+        Informations(airlyId: airlyId)
     }
  }

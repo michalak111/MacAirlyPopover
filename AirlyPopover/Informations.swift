@@ -9,26 +9,37 @@ import SwiftUI
 import WebKit
 
 struct Informations: View {
+    var airlyId: String
+
+    init(airlyId: String) {
+        self.airlyId = airlyId
+    }
+    
     var body: some View {
-        WebView()
+        WebView(airlyId: airlyId)
     }
 }
 
 struct Informations_Previews: PreviewProvider {
     static var previews: some View {
-        Informations()
+        Informations(airlyId: "Test")
     }
 }
 
 struct WebView: NSViewRepresentable {
-    func makeNSView(context: Context) -> some NSView {
-        let request = URLRequest(url: URL(string: "https://airly.org/map/widget.html#w=280&h=380&m=false&i=true&d=false&ah=true&aw=false&l=pl&it=AIRLY_CAQI&us=metric&ut=celsius&lat=50.057447&lng=19.946008&id=58")!)
-        let wkWebView = WKWebView()
-        wkWebView.load(request)
-        return wkWebView
-            
+    var airlyId: String
+    
+    init(airlyId: String) {
+        self.airlyId = airlyId
     }
     
-    func updateNSView(_ nsView: NSViewType, context: Context) {
+    func makeNSView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    
+    func updateNSView(_ nsView: WKWebView, context: Context) {
+        let request = URLRequest(url: URL(string: "https://airly.org/map/widget.html#w=280&h=380&m=false&i=true&d=false&ah=true&aw=false&l=pl&it=AIRLY_CAQI&us=metric&ut=celsius&id=" + airlyId)!)
+        nsView.load(request)
+        nsView.reload()
     }
 }

@@ -84,7 +84,7 @@
 			dependencies = (
 			);
 			name = AirlyPopover;
-			productName = WhatsNext;
+			productName = AirlyPopover;
 			productReference = 17E5948127A8402A001DF847 /* AirlyPopover.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -276,7 +276,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhatsNext/Info.plist;
+				INFOPLIST_FILE = AirlyPopover/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We want to read your calendar to show upoming events.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +306,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhatsNext/Info.plist;
+				INFOPLIST_FILE = AirlyPopover/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We want to read your calendar to show upoming events.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
